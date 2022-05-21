@@ -1,0 +1,22 @@
+<mat-toolbar class="toolbar" color="primary">
+  <div class="options">
+    <div [routerLink]="['/dashboard']">
+      Movies El Sabroso
+    </div>
+  </div>
+
+  <div class="menu" [matMenuTriggerFor]="menu">
+    <span class="lean">Lean</span> <span class="tech">Tech</span>
+  </div>
+
+  <mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <button mat-menu-item [routerLink]="['/edit-profile']">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Edit Profile</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

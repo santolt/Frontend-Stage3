@@ -1,0 +1,29 @@
+.toolbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(40, 82, 28);
+  font-family: 'Macondo', cursive;
+  font-weight: bold;
+
+  .lean{
+    color: yellow;
+    font-weight: bolder;
+  }
+  .tech{
+    color: orange;
+    font-weight: bolder;
+
+  }
+
+}
+
+.menu{
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  cursor: pointer;
+  gap: 1rem;
+}

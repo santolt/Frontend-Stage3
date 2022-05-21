@@ -1,0 +1,20 @@
+<div class="dashboard">
+  <div class="dashboard__form">
+    <app-search
+      [searching]="searchingMovie"
+      (searchMovieEmitter)="searchMovie($event)"
+    ></app-search>
+  </div>
+  <div class="dashboard__table" *ngIf="hasResults()">
+    <app-result
+      [movieList]="movieList"
+      (addFavoriteMovieEmitter)="addFavoriteMovie($event)"
+    ></app-result>
+  </div>
+  <div class="dashboard__favorites" *ngIf="hasFavoriteShow()">
+    <app-favorites
+      [favorites]="favoriteShows"
+      (removeFavoriteEmitter)="removeFavorite($event)"
+    ></app-favorites>
+  </div>
+</div>

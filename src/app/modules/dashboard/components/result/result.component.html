@@ -1,0 +1,35 @@
+<div class="form-table">
+  <form [formGroup]="movieForm" class="movies">
+    <div
+      formArrayName="movies"
+      *ngFor="let movie of getMovieList.controls; let i = index"
+      class="movie"
+    >
+      <div [formGroupName]="i" class="movie__content">
+        <div>
+          <img class="form__input" [src]="dataSource[i].poster" alt="Poster">
+        </div>
+        <div>
+          <mat-form-field class="form__input" appearance="legacy">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" />
+          </mat-form-field>
+          <mat-form-field class="form__input" appearance="legacy">
+            <mat-label>Type</mat-label>
+            <input matInput formControlName="type" />
+          </mat-form-field>
+          <mat-form-field class="form__input" appearance="legacy">
+            <mat-label>Year</mat-label>
+            <input matInput formControlName="year" />
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-flat-button color="primary" (click)="addFavoriteMovie(i)">
+            Add to favorites
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br>
+</div>
