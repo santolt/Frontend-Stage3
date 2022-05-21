@@ -1,4 +1,4 @@
-export interface MovieListResponse {
+export interface Movie {
   data: {results: any; totalResults: number};
   error: boolean;
   Error?: string;

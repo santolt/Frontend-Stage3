@@ -1,16 +1,16 @@
 <div class="dashboard">
   <div class="dashboard__form">
-    <app-search
+    <app-form
       [searching]="searchingMovie"
       (searchMovieEmitter)="searchMovie($event)"
-    ></app-search>
+    ></app-form>
   </div>
   <hr>
   <div class="dashboard__table" *ngIf="hasResults()">
-    <app-result
+    <app-table-movies
       [movieList]="movieList"
       (addFavoriteMovieEmitter)="addFavoriteMovie($event)"
-    ></app-result>
+    ></app-table-movies>
   </div>
   <div class="dashboard__favorites" *ngIf="hasFavoriteShow()">
     <app-favorites

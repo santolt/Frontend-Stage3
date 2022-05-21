@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss']
 })
-export class SearchComponent implements OnChanges {
+export class FormComponent implements OnChanges {
 
   @Input() searching: boolean;
   @Output() searchMovieEmitter = new EventEmitter<string>();

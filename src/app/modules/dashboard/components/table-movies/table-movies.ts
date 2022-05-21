@@ -3,11 +3,11 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MovieInterface } from 'src/app/interfaces/movie.model';
 
 @Component({
-  selector: 'app-result',
-  templateUrl: './result.component.html',
-  styleUrls: ['./result.component.scss']
+  selector: 'app-table-movies',
+  templateUrl: './table-movies.html',
+  styleUrls: ['./table-movies.scss']
 })
-export class ResultComponent implements OnInit {
+export class TableMovies implements OnInit {
   displayedColumns: string[] = ["title", "type", "year", "action"];
   dataSource: MovieInterface[];
   movieForm: FormGroup;
@@ -21,7 +21,7 @@ export class ResultComponent implements OnInit {
       movies: this.fb.array([]),
     });
   }
-  
+
   ngOnInit(): void {
     this.dataSource = this.movieList;
   }

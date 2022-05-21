@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "@environments/environment";
 import { HttpClient } from "@angular/common/http";
-import { MovieListResponse } from "src/app/interfaces/movie.model";
+import { Movie } from "src/app/interfaces/movie.model";
 import { map } from "rxjs/operators";
 
 @Injectable({
@@ -11,7 +11,7 @@ import { map } from "rxjs/operators";
 export class MoviesService {
   constructor(private http: HttpClient) {}
 
-  public getMovieList(query: string): Observable<MovieListResponse> {
+  public getMovieList(query: string): Observable<Movie> {
     const url = `${environment.endpoint}/?s=${query}&apikey=${environment.apiKey}`;
     return this.http.get<any>(url).pipe(
       map((response) => {

@@ -1,0 +1,43 @@
+
+.table{
+  width: 90%;
+  margin: 0 auto;
+
+  .container-movies{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    .movie {
+      display: flex;
+      flex-direction: column;
+      max-width: 55rem;
+      margin-right: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 1px 1px 3px #999;
+      background-color: white;
+      &--editing {
+        border: 0.05rem solid red;
+      }
+      &__content{
+        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        img{
+          height: 12rem;
+          width: auto;
+        }
+        button{
+          background-color: yellow;
+          border: 1px solid black;
+        }
+      }
+    }
+  }
+
+}
+
