@@ -5,6 +5,7 @@
       (searchMovieEmitter)="searchMovie($event)"
     ></app-search>
   </div>
+  <hr>
   <div class="dashboard__table" *ngIf="hasResults()">
     <app-result
       [movieList]="movieList"

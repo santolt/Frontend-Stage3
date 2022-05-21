@@ -1,18 +1,18 @@
 <div class="form" [formGroup]="movieForm">
-    <mat-form-field class="form__input" appearance="fill" required>
-        <mat-label>Select Content Type</mat-label>
+    <mat-form-field class="form__input" appearance="fill">
+        <mat-label>What do you wanna watch?</mat-label>
         <mat-select>
-            <mat-option *ngFor="let option of options" [value]="option.value">
-                {{option.viewValue | titlecase}}
+            <mat-option *ngFor="let item of options" [value]="item.value">
+                {{item.viewValue | titlecase}}
             </mat-option>
         </mat-select>
     </mat-form-field>
     <mat-form-field class="form__input" appearance="legacy">
-        <mat-label>Buscar película</mat-label>
+        <mat-label>Name</mat-label>
         <input matInput formControlName="title"/>
     </mat-form-field>
     <mat-form-field class="form__input" appearance="legacy">
-        <mat-label>Año de estreno</mat-label>
+        <mat-label>Year</mat-label>
         <input matInput formControlName="year" />
     </mat-form-field>
     <button

@@ -10,12 +10,12 @@ export class SearchComponent implements OnChanges {
 
   @Input() searching: boolean;
   @Output() searchMovieEmitter = new EventEmitter<string>();
-  
+
   movieForm: FormGroup;
   options: any = [
-    {value: 'movies-0', viewValue: 'movies'},
-    {value: 'series-1', viewValue: 'series'},
-    {value: 'episodes-2', viewValue: 'episodes'},
+    {value: 'movies', viewValue: 'movies'},
+    {value: 'series', viewValue: 'series'},
+    {value: 'episodes', viewValue: 'episodes'},
   ];
 
   constructor(private fb: FormBuilder) {
@@ -31,12 +31,12 @@ export class SearchComponent implements OnChanges {
       this.searching = changes['searching'].currentValue;
   }
 
-  get getTitle() {
+  get title() {
     return this.movieForm.get("title");
   }
 
   searchMovie() {
-    this.searchMovieEmitter.emit(this.getTitle!.value);
+    this.searchMovieEmitter.emit(this.title!.value);
   }
 
 }
