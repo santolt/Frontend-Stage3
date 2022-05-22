@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { MovieInterface } from "src/app/interfaces/movie.model";
+import { Component} from "@angular/core";
 
 @Component({
   selector: "app-favorites",
@@ -7,13 +6,7 @@ import { MovieInterface } from "src/app/interfaces/movie.model";
   styleUrls: ["./favorites.component.scss"],
 })
 export class FavoritesComponent {
-  @Input() favorites: MovieInterface[];
-  @Output() removeFavoriteEmitter = new EventEmitter<number>();
-  constructor() {
-    this.favorites = [];
-  }
 
-  removeFavorite(index: number) {
-    this.removeFavoriteEmitter.emit(index);
-  }
+  constructor() {}
+
 }

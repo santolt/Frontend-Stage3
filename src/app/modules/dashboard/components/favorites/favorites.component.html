@@ -1,28 +1,3 @@
-<div class="title">
-  <h2>Favorite Movies</h2>
+<div class="fovorites-container">
+  <h2>My Favorites</h2>
 </div>
-<div class="favorite">
-  <div class="content" *ngFor="let show of favorites; let i = index">
-    <div class="favorite__header">
-        <div class="favorite__header--info">
-            <div class="favorite__header__title">
-                <span><b>Title: {{show.title}}</b></span>
-            </div>
-
-            <div class="favorite__header__journal">
-                <span><b>Type: {{show.type}}</b></span>
-            </div>
-            
-            <div class="favorite__header__year">
-              <span><b>Year: {{show.year}}</b></span>
-          </div>
-        </div>
-        <div class="favorite__delete">
-            <mat-icon (click)="removeFavorite(i)">close</mat-icon>
-        </div>
-    </div>
-    
-    <img class="favorite__image" [src]="show.poster">
-  </div>
-</div>
-<br>

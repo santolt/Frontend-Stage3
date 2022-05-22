@@ -6,16 +6,13 @@
     ></app-form>
   </div>
   <hr>
-  <div class="dashboard__table" *ngIf="hasResults()">
+  <div class="dashboard__table" *ngIf="dataPoint()">
     <app-table-movies
-      [movieList]="movieList"
-      (addFavoriteMovieEmitter)="addFavoriteMovie($event)"
+      [movieList]="myList"
+      (addFavoriteMovieEmitter)="addMyFavorites($event)"
     ></app-table-movies>
   </div>
-  <div class="dashboard__favorites" *ngIf="hasFavoriteShow()">
-    <app-favorites
-      [favorites]="favoriteShows"
-      (removeFavoriteEmitter)="removeFavorite($event)"
-    ></app-favorites>
+  <div>
+    <app-favorites></app-favorites>
   </div>
 </div>

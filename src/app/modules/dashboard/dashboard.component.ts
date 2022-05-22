@@ -9,52 +9,45 @@ import Swal from "sweetalert2";
   styleUrls: ["./dashboard.component.scss"],
 })
 export class DashboardComponent {
-  movieList: MovieInterface[];
-  favoriteShows: MovieInterface[];
-  searchingMovie = false;
   selectedColor: string;
-  today: Date;
+  searchingMovie = false;
+  myList: MovieInterface[];
+  myfavorite: MovieInterface[];
+  todayData: Date;
   message: string = '';
   constructor(private moviesService: MoviesService) {
-    this.movieList = [];
-    this.favoriteShows = [];
     this.selectedColor = "orange";
-    this.today = new Date();
+    this.myList = [];
+    this.myfavorite = [];
+    this.todayData = new Date();
   }
 
   searchMovie(movieTitle: string) {
-    this.movieList = [];
+    this.myList = [];
     this.moviesService.getMovieList(movieTitle).subscribe(
       (result: any) => {
         if (!result.error)
-          this.movieList = result.data.results;
+          this.myList = result.data.results;
         else
-          Swal.fire('Demasiados resultados, intenta escribir más', '', 'error');
+          Swal.fire('Try again!!', '', 'error');
       },
     );
   }
 
-  addFavoriteMovie(favoriteMovie: MovieInterface) {
-    const alreadyAdded = this.favoriteShows.findIndex(
+  addMyFavorites(favoriteMovie: MovieInterface) {
+    const alreadyAdded = this.myfavorite.findIndex(
       (element) => element.title === favoriteMovie.title
     );
     if (alreadyAdded === -1)
-      this.favoriteShows.push(favoriteMovie);
+      this.myfavorite.push(favoriteMovie);
     else {
-      this.message = 'Movie already added: ' + favoriteMovie.title;
+      this.message = 'Your Movie Added: ' + favoriteMovie.title;
       Swal.fire(this.message, '', 'error');
     }
   }
 
-  removeFavorite(index: number) {
-    this.favoriteShows.splice(index, 1);
+  dataPoint() {
+    return this.myList.length > 0;
   }
 
-  hasResults() {
-    return this.movieList.length > 0;
-  }
-
-  hasFavoriteShow() {
-    return this.favoriteShows.length > 0;
-  }
 }
